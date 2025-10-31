@@ -5,13 +5,19 @@
   "type": "module",
   "scripts": {
     "start": "node src/index.js",
-    "test": "jest --detectOpenHandles"
+    "test": "jest --detectOpenHandles",
+    "prepare": "husky",
+    "lint": "prettier . --write && eslint --fix"
   },
   "devDependencies": {
     "@babel/core": "^7.25.8",
     "@babel/preset-env": "^7.25.8",
     "babel-jest": "^30.1.2",
-    "jest": "^30.1.2"
+    "eslint": "^9.38.0",
+    "husky": "^9.1.7",
+    "jest": "^30.1.2",
+    "lint-staged": "^16.2.6",
+    "prettier": "3.6.2"
   },
   "dependencies": {
     "@woowacourse/mission-utils": "^2.2.0"
@@ -29,5 +35,8 @@
   "engines": {
     "npm": ">=10.8.2",
     "node": ">=22.19.0"
+  },
+  "lint-staged": {
+    "*.js": "npm run lint"
   }
 }
