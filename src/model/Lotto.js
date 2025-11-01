@@ -1,11 +1,16 @@
 import { LottoNumberError } from '../error/index.js';
 import { Validator } from '../util/index.js';
-import { LOTTO } from '../const.js';
+import { LOTTO } from '../const/index.js';
 
 class Lotto {
   #numbers;
 
   constructor(numbers) {
+    this.#validateNumbers(numbers);
+    this.#numbers = numbers.sort((a, b) => a - b);
+  }
+
+  #validateNumbers(numbers) {
     const validator = new Validator(numbers)
       .len(LOTTO.LENGTH)
       .onlyInt()
@@ -13,8 +18,6 @@ class Lotto {
       .unique();
 
     if (validator.failed()) throw new LottoNumberError();
-
-    this.#numbers = numbers.sort((a, b) => a - b);
   }
 
   getNumbers() {
