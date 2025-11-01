@@ -46,6 +46,14 @@ class Validator {
 
     return this;
   }
+
+  multipleOf(base) {
+    for (const num of this.#data) {
+      if (num % base !== 0) this.#fail = true;
+    }
+
+    return this;
+  }
 }
 
 export default Validator;
