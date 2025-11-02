@@ -1,9 +1,9 @@
 import { CustomError } from './index.js';
 
-class LottoGeneratorError extends CustomError {
+class LottoVenderError extends CustomError {
   constructor(message = 'Invalid amount') {
     super(message);
   }
 }
 
-export default LottoGeneratorError;
+export default LottoVenderError;

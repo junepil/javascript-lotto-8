@@ -1,5 +1,11 @@
 import CustomError from './CustomError.js';
 import LottoNumberError from './LottoNumberError.js';
-import LottoGeneratorError from './LottoGeneratorError.js';
+import LottoVenderError from './LottoVenderError.js';
+import LottoStatisticianError from './LottoStatisticianError';
 
-export { CustomError, LottoNumberError, LottoGeneratorError };
+export {
+  CustomError,
+  LottoNumberError,
+  LottoVenderError,
+  LottoStatisticianError,
+};
