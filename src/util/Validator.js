@@ -31,6 +31,14 @@ class Validator {
     return this;
   }
 
+  only(Class) {
+    for (const record of this.#data) {
+      if (!(record instanceof Class)) this.#fail = true;
+    }
+
+    return this;
+  }
+
   inRange(begin, end) {
     for (const num of this.#data) {
       if (num < begin || num > end) this.#fail = true;

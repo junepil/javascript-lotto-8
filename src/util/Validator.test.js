@@ -65,4 +65,14 @@ describe('Validator', () => {
       expect(validator.multipleOf(2).failed()).toBe(true);
     });
   });
+  describe('only', () => {
+    it('validate data is only consist of specific class', () => {
+      const validator = new Validator([[], [], []]);
+      expect(validator.only(Array).failed()).toBe(false);
+    });
+    it('returns false if there is onrelated data', () => {
+      const validator = new Validator([[], [], 5]);
+      expect(validator.only(Array).failed()).toBe(true);
+    });
+  });
 });
