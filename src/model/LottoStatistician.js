@@ -1,7 +1,7 @@
-import { LOTTO } from '../const';
-import { LottoStatisticianError } from '../error';
-import { Validator } from '../util';
-import Lotto from './Lotto.js';
+import { LOTTO } from '../const/index.js';
+import { LottoStatisticianError } from '../error/index.js';
+import { Validator } from '../util/index.js';
+import { Lotto } from './index.js';
 
 class LottoStatistician {
   #winningNumbers;

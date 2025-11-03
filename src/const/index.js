@@ -1,3 +1,3 @@
-import { LOTTO } from './lotto';
+import { LOTTO } from './lotto.js';
 
 export { LOTTO };
