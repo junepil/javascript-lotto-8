@@ -1,5 +1,4 @@
-import LottoVender from './LottoVender.js';
-import Lotto from './Lotto.js';
+import { LottoVender, Lotto } from './index.js';
 import { LottoVenderError } from '../error/index.js';
 
 jest.mock('./Lotto.js');
