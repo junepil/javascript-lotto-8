@@ -24,7 +24,8 @@ class CliLottoView {
 
     this.#output(`${number}개를 구매했습니다.\n`);
     for (const lotto of lottos) {
-      this.#output(lotto.getNumbers());
+      const numbers = lotto.getNumbers();
+      this.#output(`[${numbers.join(', ')}]`);
     }
   }
 
