@@ -19,7 +19,8 @@ class LottoVender {
   static #validateAmount(amount) {
     const validator = new Validator(amount).onlyInt().multipleOf(LOTTO.PRICE);
 
-    if (validator.failed()) throw new LottoVenderError();
+    if (validator.failed())
+      throw new LottoVenderError(`${amount} is not valid for lotto vender`);
   }
 
   static #generateLotto() {
