@@ -1,4 +1,5 @@
 import Validator from './Validator.js';
+import { Lotto } from '../model';
 
 describe('Validator', () => {
   describe('constructor', () => {
@@ -67,8 +68,8 @@ describe('Validator', () => {
   });
   describe('only', () => {
     it('validate data is only consist of specific class', () => {
-      const validator = new Validator([[], [], []]);
-      expect(validator.only(Array).failed()).toBe(false);
+      const validator = new Validator([new Lotto([1, 2, 3, 4, 5, 6])]);
+      expect(validator.only(Lotto).failed()).toBe(false);
     });
     it('returns false if there is onrelated data', () => {
       const validator = new Validator([[], [], 5]);
