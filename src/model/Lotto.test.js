@@ -1,12 +1,15 @@
-import Lotto from './Lotto';
+import { Lotto } from './index.js';
 import { LottoNumberError } from '../error';
 
 describe('Lotto', () => {
-  it('saves numbers in ascending order', () => {
-    const lotto = new Lotto([10, 20, 30, 5, 16, 27]);
+  it.each([[[10, 20, 30, 5, 16, 27]], [[1, 2, 3, 4, 5, 6]]])(
+    'saves %s in ascending order',
+    (numbers) => {
+      const lotto = new Lotto(numbers);
 
-    expect(lotto.getNumbers()).toEqual([5, 10, 16, 20, 27, 30]);
-  });
+      expect(lotto.getNumbers()).toEqual(numbers.sort((a, b) => a - b));
+    },
+  );
 
   it('creates error if input length is more than 6.', () => {
     expect(() => {
