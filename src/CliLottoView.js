@@ -64,7 +64,9 @@ class CliLottoView {
         `${prompt[i]} (${LOTTO.PRIZE[i].toLocaleString('en-US')}원) - ${result[i]}개\n`,
       );
     }
-    this.#output(`총 수익률은 ${profitRate}%입니다.\n`);
+    this.#output(
+      `총 수익률은 ${profitRate.toFixed(1).toLocaleString('en-US')}%입니다.\n`,
+    );
   }
 }
 
