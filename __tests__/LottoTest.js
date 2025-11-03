@@ -1,5 +1,5 @@
-import { Lotto } from './index.js';
-import { LottoNumberError } from '../error';
+import { Lotto } from '../src/model/index.js';
+import { LottoNumberError } from '../src/error/index.js';
 
 describe('Lotto', () => {
   it.each([[[10, 20, 30, 5, 16, 27]], [[1, 2, 3, 4, 5, 6]]])(
